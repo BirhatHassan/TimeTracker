@@ -30,37 +30,41 @@
 		</div>
 	</div>
 
-	<div class="relative overflow-hidden bg-[#1a1714]">
-		<div class="animate-driftB pointer-events-none absolute -right-[100px] top-[20%] z-[3] h-[500px] w-[500px] bg-[radial-gradient(circle,rgba(74,158,255,0.06)_0%,transparent_65%)]"></div>
-
-		<div class="animate-slowScroll grid h-[130%] grid-cols-3 gap-0">
-
-			<div class="flex flex-col">
-				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/b/b6/Elden_Ring_Box_art.jpg" alt="Elden Ring">
-				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/4/4e/Cyberpunk_2077_box_art.jpg" alt="Cyberpunk 2077">
-				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/c/c3/Red_Dead_Redemption_2_cover_art.jpg" alt="RDR2">
-				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/b/b6/Elden_Ring_Box_art.jpg" alt="Elden Ring">
-			</div>
-
-			<div class="mt-[55px] flex flex-col">
-				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/1/1e/Hollow_Knight_cover_art.jpg" alt="Hollow Knight">
-				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/a/a0/Hades_cover_art.jpg" alt="Hades">
-				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/6/6e/The_Legend_of_Zelda_Breath_of_the_Wild.jpg" alt="Zelda BotW">
-				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/1/1e/Hollow_Knight_cover_art.jpg" alt="Hollow Knight">
-			</div>
-
-			<div class="mt-[110px] flex flex-col">
-				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/9/93/Disco_Elysium_cover_art.jpg" alt="Disco Elysium">
-				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/0/0d/Baldur%27s_Gate_3_Larian_Studios_cover_art.png" alt="BG3">
-				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/c/cc/Sekiro_art.jpg" alt="Sekiro">
-				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/9/93/Disco_Elysium_cover_art.jpg" alt="Disco Elysium">
-			</div>
-		</div>
-
-		<div class="pointer-events-none absolute inset-y-0 left-0 w-[150px] bg-gradient-to-r from-[#1a1714] to-transparent z-[4]"></div>
-		<div class="pointer-events-none absolute inset-x-0 bottom-0 h-[240px] bg-gradient-to-t from-[#1a1714] to-transparent z-[4]"></div>
-		<div class="pointer-events-none absolute inset-x-0 top-0 h-[80px] bg-gradient-to-b from-[#1a1714] to-transparent z-[4]"></div>
+	<div>
+		<h1>Work In Progress</h1>
 	</div>
+
+<!--	<div class="relative overflow-hidden bg-[#1a1714]">-->
+<!--		<div class="animate-driftB pointer-events-none absolute -right-[100px] top-[20%] z-[3] h-[500px] w-[500px] bg-[radial-gradient(circle,rgba(74,158,255,0.06)_0%,transparent_65%)]"></div>-->
+
+<!--		<div class="animate-slowScroll grid h-[130%] grid-cols-3 gap-0">-->
+
+<!--			<div class="flex flex-col">-->
+<!--				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/b/b6/Elden_Ring_Box_art.jpg" alt="Elden Ring">-->
+<!--				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/4/4e/Cyberpunk_2077_box_art.jpg" alt="Cyberpunk 2077">-->
+<!--				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/c/c3/Red_Dead_Redemption_2_cover_art.jpg" alt="RDR2">-->
+<!--				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/b/b6/Elden_Ring_Box_art.jpg" alt="Elden Ring">-->
+<!--			</div>-->
+
+<!--			<div class="mt-[55px] flex flex-col">-->
+<!--				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/1/1e/Hollow_Knight_cover_art.jpg" alt="Hollow Knight">-->
+<!--				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/a/a0/Hades_cover_art.jpg" alt="Hades">-->
+<!--				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/6/6e/The_Legend_of_Zelda_Breath_of_the_Wild.jpg" alt="Zelda BotW">-->
+<!--				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/1/1e/Hollow_Knight_cover_art.jpg" alt="Hollow Knight">-->
+<!--			</div>-->
+
+<!--			<div class="mt-[110px] flex flex-col">-->
+<!--				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/9/93/Disco_Elysium_cover_art.jpg" alt="Disco Elysium">-->
+<!--				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/0/0d/Baldur%27s_Gate_3_Larian_Studios_cover_art.png" alt="BG3">-->
+<!--				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/c/cc/Sekiro_art.jpg" alt="Sekiro">-->
+<!--				<img class="aspect-[2/3] w-full object-cover brightness-[0.6] saturate-[0.75] transition-all duration-350 hover:relative hover:z-[2] hover:scale-[1.04] hover:brightness-100 hover:saturate-[1.1]" src="https://upload.wikimedia.org/wikipedia/en/9/93/Disco_Elysium_cover_art.jpg" alt="Disco Elysium">-->
+<!--			</div>-->
+<!--		</div>-->
+
+<!--		<div class="pointer-events-none absolute inset-y-0 left-0 w-[150px] bg-gradient-to-r from-[#1a1714] to-transparent z-[4]"></div>-->
+<!--		<div class="pointer-events-none absolute inset-x-0 bottom-0 h-[240px] bg-gradient-to-t from-[#1a1714] to-transparent z-[4]"></div>-->
+<!--		<div class="pointer-events-none absolute inset-x-0 top-0 h-[80px] bg-gradient-to-b from-[#1a1714] to-transparent z-[4]"></div>-->
+<!--	</div>-->
 </section>
 
 <style>
