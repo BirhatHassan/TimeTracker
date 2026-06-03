@@ -1,8 +1,15 @@
 package com.tracker.backend.service.serviceinterface;
 
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import com.tracker.backend.dto.request.LoginRequestDTO;
+import com.tracker.backend.dto.response.LoginResponseDTO;
 import com.tracker.backend.entity.User;
+import com.tracker.backend.exception.auth.AuthException;
 import com.tracker.backend.repository.UserRepository;
 
+@Service
 public class AuthService {
 	public UserRepository userRepository;
 
@@ -10,13 +17,17 @@ public class AuthService {
 		this.userRepository = userRepository;
 	}
 
-	public User getUserByEmail(String emailAdress, String password) {
-		userRepository.getUserByEmailAddress(emailAdress);
+	public LoginResponseDTO loginUser(LoginRequestDTO loginRequestDTO) {
+		LoginResponseDTO response = userRepository.getUserByEmailAddress(loginRequestDTO.emailAddress());
 
-		if (!userRepository.getUserByEmailAddress(emailAdress).equals(password)) {
-
+		if (response == null) {
+			throw new AuthException("E-mail address not found");
 		}
 
-		return userRepository.getUserByEmailAddress(emailAdress);
+		if (response != null && response.password().matches(loginRequestDTO.password())) {
+			return response;
+		}
+
+		return null;
 	}
 }
