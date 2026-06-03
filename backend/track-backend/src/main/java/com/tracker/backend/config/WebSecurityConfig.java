@@ -26,6 +26,7 @@ public class WebSecurityConfig {
 				.cors(Customizer.withDefaults())
 				.authorizeHttpRequests(auth -> auth
 						.requestMatchers("/auth/**").permitAll()
+						.requestMatchers("/user/register", "/user/check/**").permitAll()
 						.anyRequest().authenticated()
 				)
 				.addFilterBefore(new JwtAuthenticationFilter(jwtSecret), UsernamePasswordAuthenticationFilter.class);

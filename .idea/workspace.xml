@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Feat: Add initial beginning for User registration.">
-      <change afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/usercomponents/RegistrationForm.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track-frontend/src/routes/register/+page.svelte" afterDir="false" />
+    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Feat: Create frontend service layer.">
+      <change afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/services/UserServices/CheckUsername.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/services/UserServices/CreateUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/components/navigation/NavBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/navigation/NavBar.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/impl/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/test/java/com/tracker/backend/BackendApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/api/HTTPClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/HTTPClient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/api/services/CreateUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/services/UserServices/CheckEmail.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/components/usercomponents/RegistrationForm.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/usercomponents/RegistrationForm.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +140,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BackendApplication.executor": "Run",
+    "JUnit.BackendApplicationTests.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -166,6 +177,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/track-frontend/src/lib/api/services/UserServices" />
+      <recent name="$PROJECT_DIR$/track-frontend/src/lib/api" />
       <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/web" />
       <recent name="$PROJECT_DIR$" />
@@ -187,6 +200,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BackendApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="track-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tracker.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tracker.backend" />
+      <option name="MAIN_CLASS_NAME" value="com.tracker.backend.BackendApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,7 +225,7 @@
       <method v="2" />
     </configuration>
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="ms-21" />
+      <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="track-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.tracker.backend.BackendApplication" />
@@ -213,11 +241,13 @@
     </configuration>
     <list>
       <item itemvalue="Application.BackendApplication" />
+      <item itemvalue="JUnit.BackendApplicationTests" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.BackendApplication" />
+        <item itemvalue="JUnit.BackendApplicationTests" />
         <item itemvalue="Application.BackendApplication" />
       </list>
     </recent_temporary>
@@ -238,7 +268,7 @@
       <workItem from="1780490981360" duration="489000" />
       <workItem from="1780491478084" duration="11260000" />
       <workItem from="1780516476923" duration="25000" />
-      <workItem from="1780516512030" duration="3151000" />
+      <workItem from="1780516512030" duration="7097000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit - Add Svelte to project.">
       <option name="closed" value="true" />
@@ -344,11 +374,41 @@
       <option name="project" value="LOCAL" />
       <updated>1780519645757</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Feat: Create Frontend registration page.">
+      <option name="closed" value="true" />
+      <created>1780520629606</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1780520629606</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Feat: Create frontend service layer.">
+      <option name="closed" value="true" />
+      <created>1780520911409</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1780520911409</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit - Add Svelte to project." />
@@ -363,7 +423,9 @@
     <MESSAGE value="Feat: Add controller, service methods and JWT." />
     <MESSAGE value="Feat: Add datasources for DB." />
     <MESSAGE value="Feat: Add initial beginning for User registration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: Add initial beginning for User registration." />
+    <MESSAGE value="Feat: Create Frontend registration page." />
+    <MESSAGE value="Feat: Create frontend service layer." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: Create frontend service layer." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

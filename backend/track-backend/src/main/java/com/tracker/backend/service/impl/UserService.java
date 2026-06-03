@@ -32,4 +32,12 @@ public class UserService {
 
 		return userRepository.save(user);
 	}
+
+	public Boolean existsByUsername(String username) {
+		return userRepository.existsByUsername(username);
+	}
+
+	public Boolean existsByEmailAddress(String emailAddress) {
+		return userRepository.existsByEmailAddress(emailAddress);
+	}
 }

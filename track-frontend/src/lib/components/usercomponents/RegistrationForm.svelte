@@ -1,93 +1,202 @@
-<script>
-	let username = "";
-	let email = "";
-	let password = "";
+<script lang="ts">
+    import { checkEmail } from '../../api/services/UserServices/CheckEmail';
+    import { checkUsername } from '../../api/services/UserServices/CheckUsername';
 
-	function handleSubmit(e) {
-		e.preventDefault();
-		// handle register logic here
-		if (password.length < 6) {
-			alert("Please enter a valid email address");
-		}
-	}
+    let username = $state("");
+    let email = $state("");
+    let password = $state("");
+    let showPassword = $state(false); // Houdt bij of het wachtwoord zichtbaar is
+
+    let emailExists = $state(false);
+    let usernameExists = $state(false);
+    let checkingEmail = $state(false);
+    let checkingUsername = $state(false);
+    let hasChecked = $state(false);
+    let hasCheckedUsername = $state(false);
+
+    let emailTimeout: ReturnType<typeof setTimeout>;
+    let usernameTimeout: ReturnType<typeof setTimeout>;
+
+    let isPotentialEmail = $derived(email.includes("@") && email.includes("."));
+    let isValidUsername = $derived(username.trim().length >= 3);
+
+    function handleEmailInput() {
+        clearTimeout(emailTimeout);
+
+        emailExists = false;
+        hasChecked = false;
+
+        if (!isPotentialEmail) {
+            checkingEmail = false;
+            return;
+        }
+
+        checkingEmail = true;
+
+        emailTimeout = setTimeout(async () => {
+            try {
+                const res = await checkEmail(email);
+                emailExists = res;
+                hasChecked = true;
+            } catch (err) {
+                console.error(err);
+                emailExists = false;
+            } finally {
+                checkingEmail = false;
+            }
+        }, 400);
+    }
+
+    function handleUsernameInput() {
+        clearTimeout(usernameTimeout);
+
+        usernameExists = false;
+        hasCheckedUsername = false;
+
+        if (!isValidUsername) {
+            checkingUsername = false;
+            return;
+        }
+
+        checkingUsername = true;
+
+        usernameTimeout = setTimeout(async () => {
+            try {
+                const res = await checkUsername(username);
+                usernameExists = res;
+                hasCheckedUsername = true;
+            } catch (err) {
+                console.error(err);
+                usernameExists = false;
+            } finally {
+                checkingUsername = false;
+            }
+        }, 400);
+    }
+
+    function handleSubmit(e: Event) {
+        e.preventDefault();
+
+        if (checkingEmail || checkingUsername) return;
+        if (!username || !isValidUsername) return alert("Username must be at least 3 characters");
+        if (usernameExists) return alert("Username is already taken");
+        if (!isPotentialEmail) return alert("Please enter a valid email");
+        if (emailExists) return alert("Email is already taken");
+        if (password.length < 6) return alert("Password must be at least 6 characters");
+
+        console.log("REGISTER:", { username, email, password });
+    }
 </script>
 
 <div class="flex min-h-screen items-center justify-center bg-[#12100f] px-6">
 	<form
-			on:submit={handleSubmit}
+			onsubmit={handleSubmit}
 			class="w-full max-w-md rounded-2xl border border-[rgba(242,237,231,0.07)] bg-[rgba(18,16,15,0.9)] p-10 backdrop-blur-[16px]"
 	>
-		<h2 class="mb-8 text-center text-2xl font-bold text-white">
-			<span class="italic text-[#66c0f4]">TIME</span><span>Tracker</span>
-		</h2>
+		<a href="/">
+			<h2 class="mb-8 text-center text-2xl font-bold text-white">
+				<span class="italic text-[#66c0f4]">TIME</span><span>Tracker</span>
+			</h2>
+		</a>
 
-		<!-- Username -->
 		<div class="mb-5">
 			<label class="mb-2 block text-[11px] font-medium tracking-[2px] text-[rgba(242,237,231,0.6)]">
 				USERNAME
 			</label>
 			<input
-					id="username"
 					type="text"
 					bind:value={username}
-					class="w-full rounded-lg border border-[rgba(242,237,231,0.1)] bg-transparent px-4 py-3 text-sm text-white outline-none transition focus:border-[#66c0f4] focus:ring-1 focus:ring-[#66c0f4]"
+					oninput={handleUsernameInput}
+					placeholder="Your name"
+					class="w-full rounded-lg border px-4 py-3 text-sm text-white bg-transparent outline-none transition
+             {hasCheckedUsername && usernameExists ? 'border-red-500 focus:border-red-500' : ''}
+             {!checkingUsername && hasCheckedUsername && !usernameExists ? 'border-green-500 focus:border-green-500' : ''}
+             {(!hasCheckedUsername || checkingUsername) ? 'border-[rgba(242,237,231,0.1)] focus:border-[#66c0f4]' : ''}"
 			/>
+
+			<div class="min-h-[20px] mt-2">
+				{#if checkingUsername}
+					<p class="text-xs text-gray-400 animate-pulse">Checking username...</p>
+				{:else if hasCheckedUsername && usernameExists}
+					<p class="text-xs text-red-400">Username is already taken</p>
+				{:else if hasCheckedUsername && !usernameExists && isValidUsername}
+					<p class="text-xs text-green-400">Username is available</p>
+				{/if}
+			</div>
 		</div>
 
-		<!-- Email -->
 		<div class="mb-5">
 			<label class="mb-2 block text-[11px] font-medium tracking-[2px] text-[rgba(242,237,231,0.6)]">
 				EMAIL
 			</label>
+
 			<input
-					id="email"
 					type="email"
 					bind:value={email}
-					class="w-full rounded-lg border border-[rgba(242,237,231,0.1)] bg-transparent px-4 py-3 text-sm text-white outline-none transition focus:border-[#66c0f4] focus:ring-1 focus:ring-[#66c0f4]"
+					oninput={handleEmailInput}
+					placeholder="email@example.com"
+					class="w-full rounded-lg border px-4 py-3 text-sm text-white bg-transparent outline-none transition
+             {hasChecked && emailExists ? 'border-red-500 focus:border-red-500' : ''}
+             {!checkingEmail && hasChecked && !emailExists ? 'border-green-500 focus:border-green-500' : ''}
+             {(!hasChecked || checkingEmail) ? 'border-[rgba(242,237,231,0.1)] focus:border-[#66c0f4]' : ''}"
 			/>
+
+			<div class="min-h-[20px] mt-2">
+				{#if checkingEmail}
+					<p class="text-xs text-gray-400 animate-pulse">Checking email...</p>
+				{:else if hasChecked && emailExists}
+					<p class="text-xs text-red-400">Email is already taken</p>
+				{:else if hasChecked && !emailExists && isPotentialEmail}
+					<p class="text-xs text-green-400">Email is available</p>
+				{/if}
+			</div>
 		</div>
 
-		<!-- Password -->
 		<div class="mb-8">
 			<label class="mb-2 block text-[11px] font-medium tracking-[2px] text-[rgba(242,237,231,0.6)]">
 				PASSWORD
 			</label>
-			<input
-					id="password"
-					type="password"
-					bind:value={password}
-					class="w-full rounded-lg border border-[rgba(242,237,231,0.1)] bg-transparent px-4 py-3 text-sm text-white outline-none transition focus:border-[#66c0f4] focus:ring-1 focus:ring-[#66c0f4]"
-			/>
+
+			<div class="relative w-full">
+				<input
+						type={showPassword ? "text" : "password"}
+						bind:value={password}
+						placeholder="••••••••"
+						class="w-full rounded-lg border border-[rgba(242,237,231,0.1)] bg-transparent pl-4 pr-12 py-3 text-sm text-white outline-none transition focus:border-[#66c0f4]"
+				/>
+
+				<button
+						type="button"
+						onclick={() => showPassword = !showPassword}
+						class="absolute right-4 top-1/2 -translate-y-1/2 text-[rgba(242,237,231,0.4)] hover:text-white transition bg-transparent border-none cursor-pointer p-0 flex items-center justify-center"
+						aria-label={showPassword ? "Hide password" : "Show password"}
+				>
+					{#if showPassword}
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 17.772 17.772m-10.34-10.34A3 3 0 0 0 11.66 11.66m5.756 5.756a3 3 0 0 1-4.243-4.243" />
+						</svg>
+					{:else}
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+							<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+						</svg>
+					{/if}
+				</button>
+			</div>
 		</div>
 
-		<!-- Button -->
 		<button
 				type="submit"
-				class="w-full rounded-full bg-[rgba(242,237,231,1)] py-3 text-sm font-bold text-[#12100f] transition duration-200 hover:scale-[1.02] hover:bg-[#66c0f4]"
+				class="w-full rounded-full bg-[rgba(242,237,231,1)] py-3 text-sm font-bold text-[#12100f] transition
+          hover:scale-[1.02] hover:bg-[#66c0f4] hover: cursor-pointer"
 		>
 			REGISTER
 		</button>
-
-		<!-- Divider / Commented out for now: Putting back in with OAuth2.0 -->
-<!--		<div class="mt-5 flex items-center gap-3">-->
-<!--			<div class="h-px flex-1 bg-[rgba(242,237,231,0.1)]"></div>-->
-<!--				<span class="text-[10px] tracking-[2px] text-[rgba(242,237,231,0.4)]">-->
-<!--					OR-->
-<!--				</span>-->
-<!--			<div class="h-px flex-1 bg-[rgba(242,237,231,0.1)]"></div>-->
-<!--		</div>-->
-
-<!--		&lt;!&ndash; Google Button &ndash;&gt;-->
-<!--		<button-->
-<!--				type="button"-->
-<!--				class="mt-5 flex w-full items-center justify-center gap-3 rounded-full border border-[rgba(242,237,231,0.1)] bg-[rgba(255,255,255,0.02)] py-3 text-sm font-medium text-white transition duration-200 hover:border-[#66c0f4] hover:bg-[rgba(102,192,244,0.08)]"-->
-<!--		>-->
-<!--			&lt;!&ndash; Google Icon &ndash;&gt;-->
-<!--			<svg class="h-4 w-4" viewBox="0 0 48 48">-->
-<!--				<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg">-->
-<!--			</svg>-->
-
-<!--			Continue with Google-->
-<!--		</button>-->
 	</form>
 </div>
+
+<style>
+	input {
+		transition: border-color 0.2s ease-in-out;
+	}
+</style>
