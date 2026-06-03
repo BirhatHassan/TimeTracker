@@ -17,7 +17,7 @@
 		</h1>
 
 		<p class="animate-fadeUp text-muted mb-12 max-w-[400px] text-base leading-relaxed text-[rgba(242,237,231,0.45)]">
-			<strong class="font-medium text-white italic">TIMETracker</strong> is easy to use, whether you want to see your own games or someone else's — it's there for you at the click of a button.
+			<strong class="font-medium text-white italic">TIMETracker</strong> is easy to use, whether you want to see your own games or someone else's. It's there for you at the click of a button.
 		</p>
 
 		<div class="animate-fadeUp flex flex-wrap items-center gap-3.5">
