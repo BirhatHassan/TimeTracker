@@ -2,10 +2,7 @@ package com.tracker.backend.entity;
 
 import java.util.Date;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
+@Table(name = "users")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +25,7 @@ public class User {
 
 	private String username;
 
-	private String password;
+	public String password;
 
 	private String emailAddress;
 
@@ -52,4 +50,5 @@ public class User {
 	private int failedAttempts;
 
 	private Boolean isLocked;
+
 }

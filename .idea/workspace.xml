@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Feat: Add validator dependency and DTO's to the backend.">
-      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/utils/JWToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/utils/JwtAuthenticationFilter.java" afterDir="false" />
+    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Feat: Add controller, service methods and JWT.">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/track-backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/dto/response/LoginResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/dto/response/LoginResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/serviceinterface/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/serviceinterface/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +23,7 @@
   <component name="CopilotChats">
     <option name="panelChat">
       <chat>
-        <option name="activeSessionId" value="c872e54c-53f3-49ca-b687-1c38bb454f65" />
+        <option name="activeSessionId" value="c7af5282-18ad-4536-b008-1d87bfa3cc26" />
         <option name="sessions">
           <session>
             <option name="chatType" value="PANEL" />
@@ -47,6 +42,14 @@
             <option name="modelValue" value="auto" />
             <option name="targetType" value="LOCAL" />
           </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="c7af5282-18ad-4536-b008-1d87bfa3cc26" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
         </option>
         <option name="type" value="PANEL" />
       </chat>
@@ -55,6 +58,7 @@
   <component name="CopilotPersistence">
     <persistenceIdMap>
       <entry key="_/Users/birhathassan/TimeTracker" value="3EcbXBWJfowyuZK6WHwXlukW2HG" />
+      <entry key="_/Users/birhathassan/TimeTracker/backend/track-backend" value="3EdllD7WW0qRGz27GJlA3DQlv5e" />
     </persistenceIdMap>
   </component>
   <component name="CopilotUserSelectedModel">
@@ -86,10 +90,10 @@
     &quot;accountId&quot;: &quot;a21a908d-f0d4-4293-89fc-37905f9a1ce0&quot;
   }
 }</component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="pBv2k8b8" />
   </component>
@@ -149,11 +153,15 @@
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/Users/birhathassan/Downloads/backend 2/untitled/src/main/java/org/example/Main.java",
     "org.rust.first.attach.projects": "true",
-    "settings.editor.selected.configurable": "project.propCompiler",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "profiler.jvm",
     "ts.external.directory.path": "/Users/birhathassan/TimeTracker/track-frontend/node_modules/typescript/lib"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
+      "postgresql",
       "mysql_aurora"
     ]
   }
@@ -165,7 +173,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication (2)">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration name="BackendApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-24" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -190,35 +198,28 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
-    <configuration name="BackendApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="ms-21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="backend (2)" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.tracker.backend.BackendApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BackendApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="backend" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tracker.backend.BackendApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="backend (2)" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tracker.backend.BackendApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tracker.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.BackendApplication" />
-      <item itemvalue="Spring Boot.BackendApplication (1)" />
-      <item itemvalue="Spring Boot.BackendApplication (2)" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.BackendApplication" />
         <item itemvalue="Application.BackendApplication" />
       </list>
     </recent_temporary>
@@ -237,7 +238,9 @@
       <workItem from="1780490700317" duration="270000" />
       <workItem from="1780490974013" duration="6000" />
       <workItem from="1780490981360" duration="489000" />
-      <workItem from="1780491478084" duration="11166000" />
+      <workItem from="1780491478084" duration="11260000" />
+      <workItem from="1780516476923" duration="25000" />
+      <workItem from="1780516512030" duration="1312000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit - Add Svelte to project.">
       <option name="closed" value="true" />
@@ -311,7 +314,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780494483524</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Feat: Add controller, service methods and JWT.">
+      <option name="closed" value="true" />
+      <created>1780516467430</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1780516467430</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +338,8 @@
     <MESSAGE value="Feat: Add User and RefreshToken entity to backend." />
     <MESSAGE value="Feat: Add beginning of controllers, service, repositories and exceptions." />
     <MESSAGE value="Feat: Add validator dependency and DTO's to the backend." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: Add validator dependency and DTO's to the backend." />
+    <MESSAGE value="Feat: Add controller, service methods and JWT." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: Add controller, service methods and JWT." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
