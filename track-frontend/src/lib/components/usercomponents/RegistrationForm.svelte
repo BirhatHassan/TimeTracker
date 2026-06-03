@@ -2,10 +2,13 @@
     import { checkEmail } from '../../api/services/UserServices/CheckEmail';
     import { checkUsername } from '../../api/services/UserServices/CheckUsername';
 
+    let firstName = $state("");
+    let lastName = $state("");
+    let birthDate = $state("");
     let username = $state("");
     let email = $state("");
     let password = $state("");
-    let showPassword = $state(false); // Houdt bij of het wachtwoord zichtbaar is
+    let showPassword = $state(false);
 
     let emailExists = $state(false);
     let usernameExists = $state(false);
@@ -22,17 +25,13 @@
 
     function handleEmailInput() {
         clearTimeout(emailTimeout);
-
         emailExists = false;
         hasChecked = false;
-
         if (!isPotentialEmail) {
             checkingEmail = false;
             return;
         }
-
         checkingEmail = true;
-
         emailTimeout = setTimeout(async () => {
             try {
                 const res = await checkEmail(email);
@@ -49,17 +48,13 @@
 
     function handleUsernameInput() {
         clearTimeout(usernameTimeout);
-
         usernameExists = false;
         hasCheckedUsername = false;
-
         if (!isValidUsername) {
             checkingUsername = false;
             return;
         }
-
         checkingUsername = true;
-
         usernameTimeout = setTimeout(async () => {
             try {
                 const res = await checkUsername(username);
@@ -76,60 +71,53 @@
 
     function handleSubmit(e: Event) {
         e.preventDefault();
-
-        if (checkingEmail || checkingUsername) return;
-        if (!username || !isValidUsername) return alert("Username must be at least 3 characters");
-        if (usernameExists) return alert("Username is already taken");
-        if (!isPotentialEmail) return alert("Please enter a valid email");
-        if (emailExists) return alert("Email is already taken");
-        if (password.length < 6) return alert("Password must be at least 6 characters");
-
-        console.log("REGISTER:", { username, email, password });
+        console.log("REGISTER:", { firstName, lastName, birthDate, username, email, password });
     }
 </script>
 
-<div class="flex min-h-screen items-center justify-center bg-[#12100f] px-6">
+<div class="flex min-h-screen items-center justify-center bg-[#12100f] px-6 py-12">
 	<form
 			onsubmit={handleSubmit}
 			class="w-full max-w-md rounded-2xl border border-[rgba(242,237,231,0.07)] bg-[rgba(18,16,15,0.9)] p-10 backdrop-blur-[16px]"
 	>
 		<a href="/">
 			<h2 class="mb-8 text-center text-2xl font-bold text-white">
-				<span class="italic text-[#66c0f4]">TIME</span><span>Tracker</span>
+				<span class="italic text-[#66c0f4]">Backlog</span><span class="mx-0.5">DB</span>
 			</h2>
 		</a>
 
+		<div class="grid grid-cols-2 gap-4 mb-5">
+			<div>
+				<label class="mb-2 block text-[11px] font-medium tracking-[2px] text-[rgba(242,237,231,0.6)]">FIRST</label>
+				<input type="text" bind:value={firstName} placeholder="John" class="w-full rounded-lg border border-[rgba(242,237,231,0.1)] bg-transparent px-4 py-3 text-sm text-white outline-none transition focus:border-[#66c0f4]" />
+			</div>
+			<div>
+				<label class="mb-2 block text-[11px] font-medium tracking-[2px] text-[rgba(242,237,231,0.6)]">LAST</label>
+				<input type="text" bind:value={lastName} placeholder="Doe" class="w-full rounded-lg border border-[rgba(242,237,231,0.1)] bg-transparent px-4 py-3 text-sm text-white outline-none transition focus:border-[#66c0f4]" />
+			</div>
+		</div>
+
 		<div class="mb-5">
-			<label class="mb-2 block text-[11px] font-medium tracking-[2px] text-[rgba(242,237,231,0.6)]">
-				USERNAME
-			</label>
+			<label class="mb-2 block text-[11px] font-medium tracking-[2px] text-[rgba(242,237,231,0.6)]">BIRTH DATE</label>
+			<input type="date" bind:value={birthDate} class="w-full rounded-lg border border-[rgba(242,237,231,0.1)] bg-transparent px-4 py-3 text-sm text-white outline-none transition focus:border-[#66c0f4] [color-scheme:dark]" />
+		</div>
+
+		<div class="mb-5">
+			<label class="mb-2 block text-[11px] font-medium tracking-[2px] text-[rgba(242,237,231,0.6)]">USERNAME</label>
 			<input
 					type="text"
 					bind:value={username}
 					oninput={handleUsernameInput}
-					placeholder="Your name"
+					placeholder="johndoe"
 					class="w-full rounded-lg border px-4 py-3 text-sm text-white bg-transparent outline-none transition
              {hasCheckedUsername && usernameExists ? 'border-red-500 focus:border-red-500' : ''}
              {!checkingUsername && hasCheckedUsername && !usernameExists ? 'border-green-500 focus:border-green-500' : ''}
              {(!hasCheckedUsername || checkingUsername) ? 'border-[rgba(242,237,231,0.1)] focus:border-[#66c0f4]' : ''}"
 			/>
-
-			<div class="min-h-[20px] mt-2">
-				{#if checkingUsername}
-					<p class="text-xs text-gray-400 animate-pulse">Checking username...</p>
-				{:else if hasCheckedUsername && usernameExists}
-					<p class="text-xs text-red-400">Username is already taken</p>
-				{:else if hasCheckedUsername && !usernameExists && isValidUsername}
-					<p class="text-xs text-green-400">Username is available</p>
-				{/if}
-			</div>
 		</div>
 
 		<div class="mb-5">
-			<label class="mb-2 block text-[11px] font-medium tracking-[2px] text-[rgba(242,237,231,0.6)]">
-				EMAIL
-			</label>
-
+			<label class="mb-2 block text-[11px] font-medium tracking-[2px] text-[rgba(242,237,231,0.6)]">EMAIL</label>
 			<input
 					type="email"
 					bind:value={email}
@@ -140,63 +128,28 @@
              {!checkingEmail && hasChecked && !emailExists ? 'border-green-500 focus:border-green-500' : ''}
              {(!hasChecked || checkingEmail) ? 'border-[rgba(242,237,231,0.1)] focus:border-[#66c0f4]' : ''}"
 			/>
-
-			<div class="min-h-[20px] mt-2">
-				{#if checkingEmail}
-					<p class="text-xs text-gray-400 animate-pulse">Checking email...</p>
-				{:else if hasChecked && emailExists}
-					<p class="text-xs text-red-400">Email is already taken</p>
-				{:else if hasChecked && !emailExists && isPotentialEmail}
-					<p class="text-xs text-green-400">Email is available</p>
-				{/if}
-			</div>
 		</div>
 
 		<div class="mb-8">
-			<label class="mb-2 block text-[11px] font-medium tracking-[2px] text-[rgba(242,237,231,0.6)]">
-				PASSWORD
-			</label>
-
+			<label class="mb-2 block text-[11px] font-medium tracking-[2px] text-[rgba(242,237,231,0.6)]">PASSWORD</label>
 			<div class="relative w-full">
-				<input
-						type={showPassword ? "text" : "password"}
-						bind:value={password}
-						placeholder="••••••••"
-						class="w-full rounded-lg border border-[rgba(242,237,231,0.1)] bg-transparent pl-4 pr-12 py-3 text-sm text-white outline-none transition focus:border-[#66c0f4]"
-				/>
-
-				<button
-						type="button"
-						onclick={() => showPassword = !showPassword}
-						class="absolute right-4 top-1/2 -translate-y-1/2 text-[rgba(242,237,231,0.4)] hover:text-white transition bg-transparent border-none cursor-pointer p-0 flex items-center justify-center"
-						aria-label={showPassword ? "Hide password" : "Show password"}
-				>
+				<input type={showPassword ? "text" : "password"} bind:value={password} placeholder="••••••••" class="w-full rounded-lg border border-[rgba(242,237,231,0.1)] bg-transparent pl-4 pr-12 py-3 text-sm text-white outline-none transition focus:border-[#66c0f4]" />
+				<button type="button" onclick={() => showPassword = !showPassword} class="absolute right-4 top-1/2 -translate-y-1/2 text-[rgba(242,237,231,0.4)] hover:text-white transition bg-transparent border-none cursor-pointer">
 					{#if showPassword}
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 17.772 17.772m-10.34-10.34A3 3 0 0 0 11.66 11.66m5.756 5.756a3 3 0 0 1-4.243-4.243" />
-						</svg>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 17.772 17.772m-10.34-10.34A3 3 0 0 0 11.66 11.66m5.756 5.756a3 3 0 0 1-4.243-4.243" /></svg>
 					{:else}
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-							<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-						</svg>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
 					{/if}
 				</button>
 			</div>
 		</div>
 
-		<button
-				type="submit"
-				class="w-full rounded-full bg-[rgba(242,237,231,1)] py-3 text-sm font-bold text-[#12100f] transition
-          hover:scale-[1.02] hover:bg-[#66c0f4] hover: cursor-pointer"
-		>
+		<button type="submit" class="w-full rounded-full bg-[rgba(242,237,231,1)] py-3 text-sm font-bold text-[#12100f] transition hover:scale-[1.02] hover:bg-[#66c0f4] hover:cursor-pointer">
 			REGISTER
 		</button>
+
+		<a href="/" class="mt-6 block text-center text-sm text-[rgba(242,237,231,0.6)] hover:text-white transition">
+			Sign in here.
+		</a>
 	</form>
 </div>
-
-<style>
-	input {
-		transition: border-color 0.2s ease-in-out;
-	}
-</style>
