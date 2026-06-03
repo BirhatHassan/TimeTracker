@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Feat: Add controller, service methods and JWT.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Feat: Add initial beginning for User registration.">
+      <change afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/usercomponents/RegistrationForm.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track-frontend/src/routes/register/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/serviceinterface/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/serviceinterface/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/components/navigation/NavBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/navigation/NavBar.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +155,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "profiler.jvm",
-    "ts.external.directory.path": "/Users/birhathassan/TimeTracker/track-frontend/node_modules/typescript/lib"
+    "ts.external.directory.path": "/Users/birhathassan/Library/Application Support/JetBrains/IntelliJIdea2025.2/plugins/javascript-plugin/jsLanguageServicesImpl/external"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -201,7 +199,7 @@
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="ms-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <module name="backend (2)" />
+      <module name="track-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.tracker.backend.BackendApplication" />
       <extension name="coverage">
         <pattern>
@@ -240,7 +238,7 @@
       <workItem from="1780490981360" duration="489000" />
       <workItem from="1780491478084" duration="11260000" />
       <workItem from="1780516476923" duration="25000" />
-      <workItem from="1780516512030" duration="1312000" />
+      <workItem from="1780516512030" duration="3151000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit - Add Svelte to project.">
       <option name="closed" value="true" />
@@ -322,7 +320,31 @@
       <option name="project" value="LOCAL" />
       <updated>1780516467430</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Feat: Add datasources for DB.">
+      <option name="closed" value="true" />
+      <created>1780517842649</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1780517842649</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Feat: Add datasources for DB.">
+      <option name="closed" value="true" />
+      <created>1780518814675</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1780518814675</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Feat: Add initial beginning for User registration.">
+      <option name="closed" value="true" />
+      <created>1780519645757</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1780519645757</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +361,9 @@
     <MESSAGE value="Feat: Add beginning of controllers, service, repositories and exceptions." />
     <MESSAGE value="Feat: Add validator dependency and DTO's to the backend." />
     <MESSAGE value="Feat: Add controller, service methods and JWT." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: Add controller, service methods and JWT." />
+    <MESSAGE value="Feat: Add datasources for DB." />
+    <MESSAGE value="Feat: Add initial beginning for User registration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: Add initial beginning for User registration." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
