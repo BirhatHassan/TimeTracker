@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Feat: Create username and email checker. Debounce too.">
+    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Feat: Add images.">
+      <change afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/interface/UserRegistration.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/components/landingpage/LandingPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/landingpage/LandingPage.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/components/navigation/NavBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/navigation/NavBar.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/api/services/UserServices/CreateUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/services/UserServices/CreateUser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/components/usercomponents/RegistrationForm.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/usercomponents/RegistrationForm.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +62,7 @@
   <component name="CopilotUserSelectedModel">
     <selectedModels>
       <entry key="agent-panel" value="Auto" />
+      <entry key="inline" value="Auto" />
       <entry key="chat-panel" value="Auto" />
     </selectedModels>
   </component>
@@ -110,6 +111,18 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectSessionTemplates">
+    <option name="inlineTemplate">
+      <template>
+        <option name="modeId" value="InlineAgent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="LOCAL" />
+      </template>
+    </option>
     <option name="panelTemplate">
       <template>
         <option name="modeId" value="Ask" />
@@ -258,7 +271,7 @@
       <workItem from="1780490981360" duration="489000" />
       <workItem from="1780491478084" duration="11260000" />
       <workItem from="1780516476923" duration="25000" />
-      <workItem from="1780516512030" duration="8717000" />
+      <workItem from="1780516512030" duration="10345000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit - Add Svelte to project.">
       <option name="closed" value="true" />
@@ -388,7 +401,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780525982028</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Feat: Add images.">
+      <option name="closed" value="true" />
+      <created>1780527599301</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1780527599301</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +445,8 @@
     <MESSAGE value="Feat: Create Frontend registration page." />
     <MESSAGE value="Feat: Create frontend service layer." />
     <MESSAGE value="Feat: Create username and email checker. Debounce too." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: Create username and email checker. Debounce too." />
+    <MESSAGE value="Feat: Add images." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: Add images." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
