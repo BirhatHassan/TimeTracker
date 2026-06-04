@@ -1,6 +1,10 @@
 <script lang="ts">
     import { checkEmail } from '../../api/services/UserServices/CheckEmail';
     import { checkUsername } from '../../api/services/UserServices/CheckUsername';
+    import { createUser } from  "../../api/services/UserServices/CreateUser";
+
+    import type { UserRegistration } from "../../api/interface/UserRegistration";
+
 
     let firstName = $state("");
     let lastName = $state("");
@@ -22,9 +26,8 @@
 
     let isPotentialEmail = $derived(email.includes("@") && email.includes("."));
     let isValidUsername = $derived(username.trim().length >= 3);
-    
-    const passwordRegex: RegExp = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
+    const passwordRegex: RegExp = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     function handlePasswordRegex(): boolean {
         const isValid = passwordRegex.test(password);
@@ -81,10 +84,33 @@
         }, 400);
     }
 
+    const formBody: UserRegistration = {
+        firstName,
+        lastName,
+        email,
+        username,
+        password,
+        dateOfBirth: birthDate
+    };
+
     function handleSubmit(e: Event) {
-        e.preventDefault();
-        handlePasswordRegex();
-        console.log("REGISTER:", { firstName, lastName, birthDate, username, email, password });
+		e.preventDefault();
+		if (emailExists || usernameExists) {
+			alert("Email of gebruikersnaam is al in gebruik.");
+			return;
+		}
+		if (!handlePasswordRegex()) {
+			return;
+		}
+		createUser(formBody)
+			.then(() => {
+				alert("Account succesvol aangemaakt! Je kunt nu inloggen.");
+				window.location.href = "/login";
+			})
+			.catch((err) => {
+				console.error(err);
+				alert("Er is een fout opgetreden bij het aanmaken van het account. Probeer het later opnieuw.");
+			});
     }
 </script>
 
