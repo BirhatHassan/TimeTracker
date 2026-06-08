@@ -12,11 +12,10 @@ interface RegistrationResponse {
  */
 export async function createUser(UserRegistration: UserRegistration): Promise<RegistrationResponse> {
     try {
-        const result = await request(`/user/register`, {
+        return await request(`/user/register`, {
             method: 'POST',
+            body: JSON.stringify(UserRegistration)
         });
-
-        return result.data as RegistrationResponse;
     } catch (err) {
         throw err;
     }

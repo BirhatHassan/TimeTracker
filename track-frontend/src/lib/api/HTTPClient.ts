@@ -19,5 +19,10 @@ export async function request(path: string, options: RequestInit = {}) {
     if (res.status === 204) return null;
 
     const text = await res.text();
-    return text ? JSON.parse(text) : null;
+
+    try {
+        return text ? JSON.parse(text) : null;
+    } catch {
+        return text; // fallback voor plain text responses
+    }
 }

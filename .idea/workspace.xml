@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Feat: Make a registration service.">
-      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/dto/request/UserCreationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/dto/request/UserCreationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/api/interface/UserRegistration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/interface/UserRegistration.ts" afterDir="false" />
+    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Feat: Add handleSubmit to registration.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/16145a74-83f9-404e-b73e-b64db065edc3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/16145a74-83f9-404e-b73e-b64db065edc3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/16145a74-83f9-404e-b73e-b64db065edc3/storage_v2/_src_/database/maindb.94eIvw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/16145a74-83f9-404e-b73e-b64db065edc3/storage_v2/_src_/database/maindb.94eIvw/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/api/HTTPClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/HTTPClient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/api/services/UserServices/CreateUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/services/UserServices/CreateUser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/components/usercomponents/RegistrationForm.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/usercomponents/RegistrationForm.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -270,7 +274,7 @@
       <workItem from="1780490981360" duration="489000" />
       <workItem from="1780491478084" duration="11260000" />
       <workItem from="1780516476923" duration="25000" />
-      <workItem from="1780516512030" duration="10758000" />
+      <workItem from="1780516512030" duration="14600000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit - Add Svelte to project.">
       <option name="closed" value="true" />
@@ -416,7 +420,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780569506334</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Feat: Add handleSubmit to registration.">
+      <option name="closed" value="true" />
+      <created>1780569921979</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1780569921979</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +466,8 @@
     <MESSAGE value="Feat: Create username and email checker. Debounce too." />
     <MESSAGE value="Feat: Add images." />
     <MESSAGE value="Feat: Make a registration service." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: Make a registration service." />
+    <MESSAGE value="Feat: Add handleSubmit to registration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: Add handleSubmit to registration." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

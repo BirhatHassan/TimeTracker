@@ -17,7 +17,9 @@ public class UserController {
 
 	@PostMapping("/register")
 	public ResponseEntity<String> registerAccount(@RequestBody UserCreationDTO userCreationDTO) {
-		return ResponseEntity.ok("Account created successfully");
+		return userService.registerUser(userCreationDTO) != null
+				? ResponseEntity.ok("User registered successfully")
+				: ResponseEntity.status(500).body("Failed to register user");
 	}
 
 	@GetMapping("/check/username")
