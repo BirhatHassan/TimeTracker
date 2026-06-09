@@ -1,5 +1,6 @@
 package com.tracker.backend.service.serviceinterface;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.tracker.backend.config.JWTConfig;
@@ -14,10 +15,12 @@ import com.tracker.backend.utils.JWToken;
 public class AuthService {
 	public UserRepository userRepository;
 	private final JWTConfig jwtConfig;
+	private final BCryptPasswordEncoder passwordEncoder;
 
-	public AuthService(UserRepository userRepository, JWTConfig jwtConfig) {
+	public AuthService(UserRepository userRepository, JWTConfig jwtConfig, BCryptPasswordEncoder passwordEncoder) {
 		this.userRepository = userRepository;
 		this.jwtConfig = jwtConfig;
+		this.passwordEncoder = passwordEncoder;
 	}
 
 	public LoginResponseDTO loginUser(LoginRequestDTO loginRequestDTO) {
@@ -25,6 +28,10 @@ public class AuthService {
 
 		if (user == null) {
 			throw new AuthException("E-mail address not found");
+		}
+
+		if (!passwordEncoder.matches(loginRequestDTO.password(), user.getPassword())) {
+			throw new AuthException("Invalid credentials");
 		}
 
 		JWToken jwToken = new JWToken(user.getId(), user.getUsername());

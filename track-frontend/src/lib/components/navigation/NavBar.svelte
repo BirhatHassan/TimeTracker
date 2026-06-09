@@ -22,7 +22,7 @@
 		</li>
 	</ul>
 
-	<a href="/register" data-sveltekit-preload-data class="cursor-pointer rounded-full bg-[rgba(242,237,231,1)] px-[28px] py-[10px] text-[13px] font-bold text-[#12100f] transition-all duration-200 hover:scale-[1.04] hover:bg-[#66c0f4]">
+	<a href="/login" data-sveltekit-preload-data class="cursor-pointer rounded-full bg-[rgba(242,237,231,1)] px-[28px] py-[10px] text-[13px] font-bold text-[#12100f] transition-all duration-200 hover:scale-[1.04] hover:bg-[#66c0f4]">
 		Sign In
 	</a>
 </nav>

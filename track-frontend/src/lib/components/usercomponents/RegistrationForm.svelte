@@ -227,7 +227,7 @@
 			REGISTER
 		</button>
 
-		<a href="/" class="mt-6 block text-center text-sm text-[rgba(242,237,231,0.6)] hover:text-white transition">
+		<a href="login" class="mt-6 block text-center text-sm text-[rgba(242,237,231,0.6)] hover:text-white transition">
 			Sign in here.
 		</a>
 	</form>
