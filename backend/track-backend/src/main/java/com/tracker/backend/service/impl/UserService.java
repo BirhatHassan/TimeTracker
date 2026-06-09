@@ -1,10 +1,13 @@
 package com.tracker.backend.service.impl;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.tracker.backend.dto.request.UserCreationDTO;
+import com.tracker.backend.dto.response.UserResponseDTO;
 import com.tracker.backend.entity.User;
 import com.tracker.backend.repository.UserRepository;
 
@@ -31,6 +34,19 @@ public class UserService {
 		user.setPassword(hashedPassword);
 
 		return userRepository.save(user);
+	}
+
+	public UserResponseDTO getMe(Long userId) {
+
+		User user = userRepository.findById(userId)
+				.orElseThrow(() ->
+						new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
+
+		return new UserResponseDTO(
+				user.getId(),
+				user.getUsername(),
+				user.getEmailAddress()
+		);
 	}
 
 	public Boolean existsByUsername(String username) {
