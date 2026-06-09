@@ -4,9 +4,10 @@ export async function request(path: string, options: RequestInit = {}) {
     const res = await fetch(`${BASE_URL}${path}`, {
         headers: {
             'Content-Type': 'application/json',
-            ...(options.headers || {})
+            ...(options.headers || {}),
         },
-        ...options
+        ...options,
+        credentials: "include"
     });
 
     if (!res.ok) {
