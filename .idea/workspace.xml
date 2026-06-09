@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Fix: Correct links and password encryption enforced.">
-      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/config/PasswordConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/dto/response/UserResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/interface/MyUserInfo.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/services/UserServices/GetMyInfo.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/config/WebClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/SteamApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/dto/response/SteamUserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/impl/SteamApiService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/impl/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/serviceinterface/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/serviceinterface/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/components/navigation/NavBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/navigation/NavBar.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/utils/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/utils/JwtAuthenticationFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +77,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="feature/login-user" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -160,7 +166,7 @@
     "Spring Boot.BackendApplication (1).executor": "Run",
     "Spring Boot.BackendApplication (2).executor": "Run",
     "Spring Boot.BackendApplication.executor": "Run",
-    "git-widget-placeholder": "feature/login-user",
+    "git-widget-placeholder": "feature/steam/api",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/birhathassan/TimeTracker",
     "node.js.detected.package.eslint": "true",

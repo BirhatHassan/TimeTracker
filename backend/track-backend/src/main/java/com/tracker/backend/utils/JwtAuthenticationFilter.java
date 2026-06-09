@@ -2,6 +2,7 @@ package com.tracker.backend.utils;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpHeaders;
@@ -9,62 +10,78 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.io.IOException;
 import java.util.Collections;
 
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
+	private static final String COOKIE_NAME = "jwt"; // Change if needed
+
 	private final String passphrase;
 
-	// Pass the passphrase via constructor from your security configuration
 	public JwtAuthenticationFilter(String passphrase) {
 		this.passphrase = passphrase;
 	}
 
 	@Override
-	protected void doFilterInternal(HttpServletRequest request,
-									HttpServletResponse response,
-									FilterChain filterChain) throws ServletException, IOException {
-
-		// 1. Extract the Authorization header
-		String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
-
-		// 2. Check if it's a valid Bearer token
-		if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-			filterChain.doFilter(request, response);
-			return;
-		}
-
-		// 3. Isolate the actual token string
-		String token = authHeader.substring(7);
+	protected void doFilterInternal(
+			HttpServletRequest request,
+			HttpServletResponse response,
+			FilterChain filterChain
+	) throws ServletException, IOException {
 
 		try {
-			// 4. Use your JWToken utility to verify it
-			JWToken decryptedToken = JWToken.verifyToken(token, passphrase);
+			String token = extractToken(request);
 
-			// 5. Create Spring Security Authentication object
-			// Using principal: username, credentials: null, authorities: empty list (or roles if you add them later)
-			UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-					decryptedToken.getUserName(),
-					null,
-					Collections.emptyList()
-			);
+			if (token != null) {
+				JWToken decryptedToken = JWToken.verifyToken(token, passphrase);
 
-			authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+				UsernamePasswordAuthenticationToken authentication =
+						new UsernamePasswordAuthenticationToken(
+								decryptedToken.getUserName(),
+								null,
+								Collections.emptyList()
+						);
 
-			// 6. Set the user in the Security Context
-			SecurityContextHolder.getContext().setAuthentication(authentication);
+				authentication.setDetails(
+						new WebAuthenticationDetailsSource().buildDetails(request)
+				);
 
-		} catch (ResponseStatusException e) {
-			// If token is invalid or expired, clear context and send 401 Unauthorized
+				SecurityContextHolder.getContext().setAuthentication(authentication);
+			}
+
+			filterChain.doFilter(request, response);
+
+		} catch (Exception e) {
 			SecurityContextHolder.clearContext();
-			response.sendError(e.getStatusCode().value(), e.getReason());
-			return;
+			response.sendError(
+					HttpServletResponse.SC_UNAUTHORIZED,
+					"Invalid or expired token"
+			);
+		}
+	}
+
+	private String extractToken(HttpServletRequest request) {
+
+		// 1. Authorization header
+		String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
+
+		if (authHeader != null && authHeader.startsWith("Bearer ")) {
+			return authHeader.substring(7);
 		}
 
-		// Move to the next filter in the chain
-		filterChain.doFilter(request, response);
+		// 2. HTTP-only cookie
+		Cookie[] cookies = request.getCookies();
+
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if (COOKIE_NAME.equals(cookie.getName())) {
+					return cookie.getValue();
+				}
+			}
+		}
+
+		return null;
 	}
 }
