@@ -27,7 +27,7 @@
 
 <div class="flex min-h-screen items-center justify-center bg-[#12100f] px-6 py-12">
 	<form
-			method="post" action=""
+			onsubmit={handleSubmit}
 			class="w-full max-w-md rounded-2xl border border-[rgba(242,237,231,0.07)] bg-[rgba(18,16,15,0.9)] p-10 backdrop-blur-[16px]"
 	>
 		<a href="/">
@@ -39,7 +39,7 @@
 		<div class="mb-5">
 			<label for="email" class="mb-2 block text-[11px] font-medium tracking-[2px] text-[rgba(242,237,231,0.6)]">EMAIL</label>
 			<input
-					type="email"
+					type="text"
 					bind:value={email}
 					name="email"
 					placeholder="email@example.com"

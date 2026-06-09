@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Feat: Add handleSubmit to registration.">
-      <change afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/interface/UserLogin.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/services/UserServices/Login.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/usercomponents/LoginForm.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track-frontend/src/routes/login/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Feat: Login user frontend.">
+      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/config/JWTConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/utils/CookieUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/api/HTTPClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/HTTPClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/components/usercomponents/RegistrationForm.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/usercomponents/RegistrationForm.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/dto/request/LoginRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/dto/request/LoginRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/dto/response/LoginResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/dto/response/LoginResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/serviceinterface/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/serviceinterface/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/utils/JWToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/utils/JWToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/api/services/UserServices/Login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/services/UserServices/Login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-frontend/src/lib/components/usercomponents/LoginForm.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/usercomponents/LoginForm.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -429,7 +434,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780569921979</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Feat: Login user frontend.">
+      <option name="closed" value="true" />
+      <created>1780994177511</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1780994177511</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +481,8 @@
     <MESSAGE value="Feat: Add images." />
     <MESSAGE value="Feat: Make a registration service." />
     <MESSAGE value="Feat: Add handleSubmit to registration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: Add handleSubmit to registration." />
+    <MESSAGE value="Feat: Login user frontend." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: Login user frontend." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

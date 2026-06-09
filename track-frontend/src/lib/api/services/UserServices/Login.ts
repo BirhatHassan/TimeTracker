@@ -3,7 +3,7 @@ import type { UserLogin } from "../../interface/UserLogin";
 
 export async function loginUser(userLogin: UserLogin) {
     try {
-        return await request(`user/login`, {
+        return await request(`/auth/login`, {
             method: "POST",
             body: JSON.stringify(userLogin),
         });

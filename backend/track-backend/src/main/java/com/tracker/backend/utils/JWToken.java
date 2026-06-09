@@ -13,16 +13,13 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 
 public class JWToken {
-	private static final String CLAIM_CALLNAME = "callName";
 	private static final String CLAIM_USERID = "id";
 	private static final String CLAIM_USERNAME = "userName";
 
 	private final Long userId;
-	private final String callName;
 	private final String userName;
 
-	public JWToken(String callName, Long userId, String userName) {
-		this.callName = callName;
+	public JWToken(Long userId, String userName) {
 		this.userId = userId;
 		this.userName = userName;
 	}
@@ -31,7 +28,6 @@ public class JWToken {
 		SecretKey key = getKey(passphrase);
 
 		return Jwts.builder()
-				.claim(CLAIM_CALLNAME, this.callName)
 				.claim(CLAIM_USERID, this.userId)
 				.claim(CLAIM_USERNAME, this.userName)
 				.issuer(issuer)
@@ -50,7 +46,6 @@ public class JWToken {
 					.getPayload();
 
 			return new JWToken(
-					claims.get(CLAIM_CALLNAME, String.class),
 					claims.get(CLAIM_USERID, Long.class),
 					claims.get(CLAIM_USERNAME, String.class)
 			);
@@ -66,10 +61,6 @@ public class JWToken {
 
 	public Long getUserId() {
 		return userId;
-	}
-
-	public String getCallName() {
-		return callName;
 	}
 
 	public String getUserName() {

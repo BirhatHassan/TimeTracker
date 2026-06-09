@@ -14,7 +14,7 @@ import com.tracker.backend.utils.JwtAuthenticationFilter;
 
 @Configuration
 public class WebSecurityConfig {
-	@Value("${jwtSecret}")
+	@Value("${jwt.secret}")
 	private String jwtSecret;
 
 	@Bean
