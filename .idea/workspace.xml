@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Fix: Correct links and password encryption enforced.">
-      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/config/WebClientConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/controller/SteamApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/dto/response/SteamUserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/service/impl/SteamApiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/track-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/utils/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/track-backend/src/main/java/com/tracker/backend/utils/JwtAuthenticationFilter.java" afterDir="false" />
+    <list default="true" id="22a828b7-6c5e-4352-b3b6-09d62433a12a" name="Changes" comment="Feat: Add API related endpoints for steam retrieval.">
+      <change afterPath="$PROJECT_DIR$/track-frontend/src/lib/api/services/SteamAPI/GetSteamUser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track-frontend/src/lib/components/steam/SteamProfile.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track-frontend/src/routes/(app)/+layout.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track-frontend/src/routes/(app)/steamprofile/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track-frontend/src/routes/(public)/login/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track-frontend/src/routes/(public)/register/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-frontend/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/routes/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-frontend/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/track-frontend/src/routes/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-frontend/src/routes/login/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/track-frontend/src/routes/register/+page.svelte" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,11 +194,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/track-frontend/src/routes/app" />
+      <recent name="$PROJECT_DIR$/track-frontend/src/routes/public" />
+      <recent name="$PROJECT_DIR$/track-frontend/src/lib/api/services" />
       <recent name="$PROJECT_DIR$/track-frontend/src/lib/api/services/UserServices" />
       <recent name="$PROJECT_DIR$/track-frontend/src/lib/api" />
-      <recent name="$PROJECT_DIR$/backend" />
-      <recent name="$PROJECT_DIR$/web" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BackendApplication">
@@ -460,7 +463,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781006717791</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Feat: Add API related endpoints for steam retrieval.">
+      <option name="closed" value="true" />
+      <created>1781010938724</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1781010938724</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +513,8 @@
     <MESSAGE value="Feat: Login user frontend." />
     <MESSAGE value="Feat: Finish backend login function, valid secret now and more." />
     <MESSAGE value="Fix: Correct links and password encryption enforced." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: Correct links and password encryption enforced." />
+    <MESSAGE value="Feat: Add API related endpoints for steam retrieval." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: Add API related endpoints for steam retrieval." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
